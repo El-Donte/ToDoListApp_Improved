@@ -1,0 +1,54 @@
+﻿<Window x:Class="ToDoListApp_Improved.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoListApp_Improved"
+        mc:Ignorable="d"
+        Title="Список дел" 
+        Height="450" Width="800"
+        FontFamily="Consolas" FontSize="20">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- список дел -->
+        <ListBox x:Name="toDoListBox" Margin="10" 
+                 Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" 
+                 SelectionChanged="toDoListBox_SelectionChanged"/>
+        
+        <!-- вывод данных списка дел: -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Content="Заголовок:" Margin="10" Grid.Row="0" Grid.Column="0"/>
+            <Label x:Name="titleLabel" Margin="10" Grid.Row="0" Grid.Column="1"/>
+            <Label Content="Описание:" Margin="10" Grid.Row="1" Grid.Column="0"/>
+            <Label x:Name="descriptionLabel" Margin="10" Grid.Row="1" Grid.Column="1"/>
+            <Label Content="Сделать до:" Margin="10" Grid.Row="2" Grid.Column="0"/>
+            <Label x:Name="deadLineLabel" Margin="10"  Grid.Row="2" Grid.Column="1"/>
+            <Label Content="Приоритет:" Margin="10" Grid.Row="3" Grid.Column="0"/>
+            <Label x:Name="priorityLabel" Margin="10" Grid.Row="3" Grid.Column="1"/>
+        </Grid>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+            <Button x:Name="addButton" Margin="10" Content="Добавить" Click="addButton_Click"/>
+            <Button x:Name="redactButton" Margin="10" Content="Редактировать" Click="redactButton_Click"/>
+            <Button x:Name="DeleteButton" Margin="10" Content="Удалить" Click="DeleteButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

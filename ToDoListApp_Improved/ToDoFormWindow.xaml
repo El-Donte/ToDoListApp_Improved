@@ -1,0 +1,45 @@
+﻿<Window x:Class="ToDoListApp_Improved.ToDoFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoListApp_Improved"
+        mc:Ignorable="d"
+        Title="Форма дела" Height="450" Width="800"
+        FontFamily="Consolas" FontSize="20">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- title -->
+        <Label Content="Заголовок:" Margin="10" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="titleTextBox" Margin="10" Grid.Row="0" Grid.Column="1"/>
+        <!-- description -->
+        <Label Content="Описание:" Margin="10" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="descriptionTextBox" Margin="10" Grid.Row="1" Grid.Column="1"/>
+        <!-- deadline -->
+        <Label Content="Сделать до:" Margin="10" Grid.Row="2" Grid.Column="0"/>
+        <DatePicker x:Name="deadlineDatePicker" Margin="10" Grid.Row="2" Grid.Column="1"/>
+        <!-- priority -->
+        <Label Content="Приоритет:" Margin="10" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox x:Name="priorityComboBox" Margin="10" SelectedIndex="0"  Grid.Row="3" Grid.Column="1">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+        <!-- кнопки -->
+        <Button x:Name="saveButton" Content="Сохранить" Margin="10" Grid.Row="4" Grid.Column="0" Click="saveButton_Click"/>
+        <Button x:Name="cancelButton" Content="Отменить" Margin="10" Grid.Row="4" Grid.Column="1" Click="cancelButton_Click"/>
+    </Grid>
+</Window>
